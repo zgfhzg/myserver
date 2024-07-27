@@ -1,11 +1,11 @@
-package com.project.myserver.eureka
+package com.project.myserver.gateway
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class EurekaApplication
+class GatewayApplication
 
 fun main(args: Array<String>) {
-    runApplication<EurekaApplication>(*args)
+    runApplication<GatewayApplication>(*args)
 }
