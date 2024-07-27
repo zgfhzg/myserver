@@ -1,0 +1,56 @@
+server:
+  port: 10013
+  error:
+    whitelabel:
+      enabled: false
+
+management:
+  endpoint:
+    gateway:
+      enabled: true
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: gateway
+    version: project.version@
+spring:
+  application:
+    name: gateway
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowCredentials: true
+            allowedOrigins: "*"
+            allowedHeaders: "*"
+            allowedMethods:
+              - POST
+              - GET
+              - PUT
+              - OPTIONS
+              - DELETE
+
+eureka:
+  client:
+    registry-fetch-interval-seconds: 5
+    service-url:
+      defaultZone: http://localhost:10012/eureka
+
+  instance:
+    instance-id: gateway
+    lease-renewal-interval-in-seconds: 2
+    lease-expiration-duration-in-seconds: 5
