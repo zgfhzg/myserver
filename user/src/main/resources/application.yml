@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: user
+
+server:
+  port: 8081
+
+eureka:
+  client:
+    registry-fetch-interval-seconds: 5
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+  instance:
+    instance-id: gateway
+    lease-renewal-interval-in-seconds: 2
+    lease-expiration-duration-in-seconds: 5
