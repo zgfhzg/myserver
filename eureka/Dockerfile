@@ -1,6 +1,6 @@
 ## gradle builder
 FROM gradle:8.9.0-jdk21-alpine as builder
-WORKDIR /eureka
+WORKDIR /myserver/eureka
 COPY . .
 RUN gradle build -x test
 
