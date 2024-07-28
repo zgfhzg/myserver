@@ -20,4 +20,4 @@ EXPOSE 8761
 WORKDIR /myserver
 COPY --from=builder /eureka/build/libs/${ARTIFACT_ID}-${ARTIFACT_VERSION}-SNAPSHOT.jar ./app.jar
 
-ENTRYPOINT ["java", "-jar", "/eureka/app.jar"]
+ENTRYPOINT ["java", "-jar", "/app.jar"]
