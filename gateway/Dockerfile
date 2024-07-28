@@ -14,7 +14,7 @@ LABEL authors="HS"
 ARG ARTIFACT_ID=gateway
 ARG ARTIFACT_VERSION=0.0.1
 
-EXPOSE 8761
+EXPOSE 8081
 
 WORKDIR /myserver
 COPY --from=builder /gateway/build/libs/${ARTIFACT_ID}-${ARTIFACT_VERSION}-SNAPSHOT.jar ./app.jar
