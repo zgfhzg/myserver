@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: auth
+
+server:
+  port: 8083
+
+eureka:
+  client:
+    registry-fetch-interval-seconds: 5
+    service-url:
+      defaultZone: http://192.168.0.28:8761/eureka
+
+  instance:
+    instance-id: user
+    lease-renewal-interval-in-seconds: 2
+    lease-expiration-duration-in-seconds: 5
