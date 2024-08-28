@@ -18,4 +18,9 @@ class TokenController(
     fun createToken(@RequestBody tokenRequest: TokenRequest): ResponseEntity<TokenResponse> {
         return ResponseEntity.ok(tokenService.generateToken(tokenRequest))
     }
+
+    @PostMapping("/validate")
+    fun validateToken(@RequestBody tokenRequest: TokenRequest): ResponseEntity<Boolean> {
+        return ResponseEntity.ok(tokenService.validateToken(tokenRequest))
+    }
 }
