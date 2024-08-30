@@ -26,7 +26,6 @@ class TokenService(
     }
 
     override fun validateToken(tokenRequest: TokenRequest): Boolean {
-        // todo: 상세 내용 구현
-        return JwtUtil.validateToken(tokenRequest.accessToken, tokenRequest.username)
+        return JwtUtil.validateToken(tokenRequest.accessToken)
     }
 }
