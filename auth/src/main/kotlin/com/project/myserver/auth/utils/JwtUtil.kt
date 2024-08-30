@@ -18,7 +18,7 @@ object JwtUtil {
             .compact()
     }
 
-    fun validateToken(token: String, username: String): Boolean {
+    fun validateToken(token: String): Boolean {
         val claims = getClaimsFromToken(token)
         val tokenUsername = claims.subject
         val expirationDate = claims.expiration
