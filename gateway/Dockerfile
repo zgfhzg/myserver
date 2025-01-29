@@ -19,4 +19,4 @@ EXPOSE 8081
 WORKDIR /myserver
 COPY --from=builder /gateway/build/libs/${ARTIFACT_ID}-${ARTIFACT_VERSION}-SNAPSHOT.jar ./gateway.jar
 
-ENTRYPOINT ["java", "-DEUREKA_URI=${EUREKA}", "-jar", "/myserver/gateway.jar"]
+ENTRYPOINT ["java", "-DEUREKA_URI=${EUREKA}", "-DSERVER_DNS=${DNS}", "-jar", "/myserver/gateway.jar"]

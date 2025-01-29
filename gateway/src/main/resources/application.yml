@@ -62,3 +62,4 @@ eureka:
     instance-id: gateway
     lease-renewal-interval-in-seconds: 2
     lease-expiration-duration-in-seconds: 5
+    hostname: ${SERVER_DNS:localhost}
