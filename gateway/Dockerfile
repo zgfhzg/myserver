@@ -17,6 +17,6 @@ ARG ARTIFACT_VERSION=0.0.1
 EXPOSE 8081
 
 WORKDIR /myserver
-COPY --from=builder /gateway/build/libs/${ARTIFACT_ID}-${ARTIFACT_VERSION}-SNAPSHOT.jar ./app.jar
+COPY --from=builder /gateway/build/libs/${ARTIFACT_ID}-${ARTIFACT_VERSION}-SNAPSHOT.jar ./gateway.jar
 
-ENTRYPOINT ["java", "-jar", "/myserver/app.jar"]
+ENTRYPOINT ["java", "-DEUREKA_URI=${EUREKA}", "-jar", "/gateway.jar"]
