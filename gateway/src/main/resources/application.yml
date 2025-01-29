@@ -45,18 +45,18 @@ spring:
               - OPTIONS
               - DELETE
       routes:
-        - id: user
-          uri: lb://user
+        - id: restapi
+          uri: lb://restapi
           predicates:
-            - Path=/user/**
+            - Path=/restapi/**
           filters:
-            - RewritePath=/user/?(?<segment>.*), /$\{segment}
+            - RewritePath=/restapi/?(?<segment>.*), /$\{segment}
 
 eureka:
   client:
     registry-fetch-interval-seconds: 5
     service-url:
-      defaultZone: http://192.168.0.28:8761/eureka
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
 
   instance:
     instance-id: gateway
